@@ -1,0 +1,23 @@
+name: Validate Schema
+
+on: [push, pull_request]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+          
+      - name: Validate JSON
+        run: |
+          python -m json.tool spec/commands.json > /dev/null
+          echo "✅ Schema is valid JSON"
+      
+      - name: Check required fields
+        run: |
+          python .github/scripts/validate_schema.py

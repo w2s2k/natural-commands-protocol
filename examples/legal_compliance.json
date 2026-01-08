@@ -1,0 +1,86 @@
+{
+  "title": "Contract Deadline Verification",
+  "description": "Verify if contract is within compliance deadline using NCP protocol",
+  "use_case": "legal_tech",
+  
+  "scenario": {
+    "problem": "Check if contract response deadline has passed",
+    "traditional_approach": "Complex date arithmetic with error-prone syntax",
+    "ncp_approach": "if contract date plus 30 days less than today then expired else active"
+  },
+  
+  "ncp_expression": {
+    "natural_language": "if contract date plus 30 days less than today then expired else active",
+    
+    "commands_used": [
+      {
+        "id": "logic_if",
+        "variant_matched": "if",
+        "category": "conditional"
+      },
+      {
+        "id": "date_add_days",
+        "variant_matched": "plus 30 days",
+        "category": "date"
+      },
+      {
+        "id": "comp_less",
+        "variant_matched": "less than",
+        "category": "comparison"
+      },
+      {
+        "id": "date_today",
+        "variant_matched": "today",
+        "category": "date"
+      }
+    ],
+    
+    "ast_structure": {
+      "type": "condition",
+      "condition": {
+        "type": "comparison",
+        "operator": "<",
+        "left": {
+          "type": "operation",
+          "function": "DATE_ADD",
+          "args": ["contract_date", 30]
+        },
+        "right": {
+          "type": "literal",
+          "function": "TODAY"
+        }
+      },
+      "then": "expired",
+      "else": "active"
+    }
+  },
+  
+  "test_cases": [
+    {
+      "input": { 
+        "contract_date": "2025-11-01",
+        "today": "2026-01-07"
+      },
+      "expected_output": "expired",
+      "explanation": "2025-11-01 + 30 days = 2025-12-01, which is < 2026-01-07"
+    },
+    {
+      "input": { 
+        "contract_date": "2025-12-15",
+        "today": "2026-01-07"
+      },
+      "expected_output": "active",
+      "explanation": "2025-12-15 + 30 days = 2026-01-14, which is > 2026-01-07"
+    }
+  ],
+  
+  "compliance_verification": {
+    "regulation": "30-day response window",
+    "ncp_advantages": [
+      "No date parsing errors",
+      "Readable by legal professionals",
+      "Audit trail in natural language",
+      "Zero ambiguity in interpretation"
+    ]
+  }
+}

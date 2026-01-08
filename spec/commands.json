@@ -1,0 +1,1858 @@
+{
+  "version": "1.0.0",
+  "schema": "natural-commands-i18n",
+  "commands": [
+    {
+      "id": "op_add",
+      "category": "arithmetic",
+      "type": "operator",
+      "compute": {
+        "function": "ADD",
+        "operator": "+",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "somar",
+          "variants": [
+            "somar",
+            "mais",
+            "adiciona",
+            "adicionar",
+            "acrescentar",
+            "aumentar por",
+            "soma"
+          ],
+          "slash": "/somar",
+          "template": "{a} mais {b}"
+        },
+        "en": {
+          "canonical": "add",
+          "variants": [
+            "add",
+            "plus",
+            "sum",
+            "increase by",
+            "add to"
+          ],
+          "slash": "/add",
+          "template": "{a} plus {b}"
+        }
+      }
+    },
+    {
+      "id": "op_subtract",
+      "category": "arithmetic",
+      "type": "operator",
+      "compute": {
+        "function": "SUBTRACT",
+        "operator": "-",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "subtrair",
+          "variants": [
+            "subtrair",
+            "menos",
+            "reduzir por",
+            "diminuir por",
+            "retirar",
+            "subtrai"
+          ],
+          "slash": "/subtrair",
+          "template": "{a} menos {b}"
+        },
+        "en": {
+          "canonical": "subtract",
+          "variants": [
+            "subtract",
+            "minus",
+            "reduce by",
+            "decrease by",
+            "take away"
+          ],
+          "slash": "/subtract",
+          "template": "{a} minus {b}"
+        }
+      }
+    },
+    {
+      "id": "op_multiply",
+      "category": "arithmetic",
+      "type": "operator",
+      "compute": {
+        "function": "MULTIPLY",
+        "operator": "*",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "multiplicar por",
+          "variants": [
+            "multiplicar por",
+            "vezes",
+            "multiplica",
+            "por",
+            "multiplicado por"
+          ],
+          "slash": "/multiplicar",
+          "template": "{a} vezes {b}"
+        },
+        "en": {
+          "canonical": "multiply by",
+          "variants": [
+            "multiply by",
+            "times",
+            "multiplied by",
+            "multiply"
+          ],
+          "slash": "/multiply",
+          "template": "{a} times {b}"
+        }
+      }
+    },
+    {
+      "id": "op_divide",
+      "category": "arithmetic",
+      "type": "operator",
+      "compute": {
+        "function": "DIVIDE",
+        "operator": "/",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "dividir por",
+          "variants": [
+            "dividir por",
+            "dividido por",
+            "sobre",
+            "divide"
+          ],
+          "slash": "/dividir",
+          "template": "{a} dividido por {b}"
+        },
+        "en": {
+          "canonical": "divide by",
+          "variants": [
+            "divide by",
+            "divided by",
+            "over",
+            "divide"
+          ],
+          "slash": "/divide",
+          "template": "{a} divided by {b}"
+        }
+      }
+    },
+    {
+      "id": "op_percentage",
+      "category": "arithmetic",
+      "type": "operator",
+      "compute": {
+        "function": "PERCENTAGE",
+        "formula": "{a} * ({b} / 100)",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "porcentagem de",
+          "variants": [
+            "porcentagem de",
+            "% de",
+            "percentual de",
+            "porcento de",
+            "por cento de"
+          ],
+          "slash": "/porcentagem",
+          "template": "{a}% de {b}"
+        },
+        "en": {
+          "canonical": "percentage of",
+          "variants": [
+            "percentage of",
+            "% of",
+            "percent of",
+            "pct of"
+          ],
+          "slash": "/percentage",
+          "template": "{a}% of {b}"
+        }
+      }
+    },
+    {
+      "id": "op_modulo",
+      "category": "arithmetic",
+      "type": "operator",
+      "compute": {
+        "function": "MOD",
+        "operator": "%",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "mod",
+          "variants": [
+            "mod",
+            "resto de",
+            "módulo de",
+            "resto da divisão"
+          ],
+          "slash": "/mod",
+          "template": "resto de {a} por {b}"
+        },
+        "en": {
+          "canonical": "mod",
+          "variants": [
+            "mod",
+            "modulo",
+            "remainder of",
+            "remainder"
+          ],
+          "slash": "/mod",
+          "template": "{a} mod {b}"
+        }
+      }
+    },
+    {
+      "id": "logic_if",
+      "category": "conditional",
+      "type": "control_flow",
+      "compute": {
+        "function": "IF",
+        "formula": "IF({condition}, {then}, {else})",
+        "arity": 3
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "se então",
+          "variants": [
+            "se então",
+            "se … então",
+            "caso então",
+            "caso … então",
+            "se",
+            "caso"
+          ],
+          "slash": "/se",
+          "template": "se {condição} então {ação}"
+        },
+        "en": {
+          "canonical": "if then",
+          "variants": [
+            "if then",
+            "if … then",
+            "if",
+            "when … then"
+          ],
+          "slash": "/if",
+          "template": "if {condition} then {action}"
+        }
+      }
+    },
+    {
+      "id": "logic_else",
+      "category": "conditional",
+      "type": "control_flow",
+      "compute": {
+        "function": "ELSE",
+        "formula": "ELSE({action})",
+        "arity": 1,
+        "requires": "if"
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "senão",
+          "variants": [
+            "senão",
+            "ou então",
+            "caso contrário",
+            "do contrário",
+            "se não"
+          ],
+          "slash": "/senão",
+          "template": "senão {ação}"
+        },
+        "en": {
+          "canonical": "else",
+          "variants": [
+            "else",
+            "otherwise",
+            "or else",
+            "if not"
+          ],
+          "slash": "/else",
+          "template": "else {action}"
+        }
+      }
+    },
+    {
+      "id": "logic_when",
+      "category": "conditional",
+      "type": "event",
+      "compute": {
+        "function": "WHEN",
+        "formula": "WHEN({condition}, {action})",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "quando",
+          "variants": [
+            "quando",
+            "no caso de",
+            "se acontecer que",
+            "ao acontecer"
+          ],
+          "slash": "/quando",
+          "template": "quando {evento} {ação}"
+        },
+        "en": {
+          "canonical": "when",
+          "variants": [
+            "when",
+            "in case of",
+            "if it happens that",
+            "upon"
+          ],
+          "slash": "/when",
+          "template": "when {event} {action}"
+        }
+      }
+    },
+    {
+      "id": "logic_whenever",
+      "category": "conditional",
+      "type": "recurring_event",
+      "compute": {
+        "function": "WHENEVER",
+        "formula": "WHENEVER({condition}, {action})",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "sempre que",
+          "variants": [
+            "sempre que",
+            "toda vez que",
+            "cada vez que",
+            "a cada vez que"
+          ],
+          "slash": "/sempre-que",
+          "template": "sempre que {condição} {ação}"
+        },
+        "en": {
+          "canonical": "whenever",
+          "variants": [
+            "whenever",
+            "every time",
+            "each time",
+            "anytime"
+          ],
+          "slash": "/whenever",
+          "template": "whenever {condition} {action}"
+        }
+      }
+    },
+    {
+      "id": "logic_while",
+      "category": "conditional",
+      "type": "loop",
+      "compute": {
+        "function": "WHILE",
+        "formula": "WHILE({condition}, {action})",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "enquanto",
+          "variants": [
+            "enquanto",
+            "durante o tempo que",
+            "enquanto durar",
+            "pelo tempo que"
+          ],
+          "slash": "/enquanto",
+          "template": "enquanto {condição} {ação}"
+        },
+        "en": {
+          "canonical": "while",
+          "variants": [
+            "while",
+            "as long as",
+            "during the time that",
+            "for as long as"
+          ],
+          "slash": "/while",
+          "template": "while {condition} {action}"
+        }
+      }
+    },
+    {
+      "id": "logic_until",
+      "category": "conditional",
+      "type": "limit",
+      "compute": {
+        "function": "UNTIL",
+        "formula": "UNTIL({condition}, {action})",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "até que",
+          "variants": [
+            "até que",
+            "até",
+            "até o momento que",
+            "até quando"
+          ],
+          "slash": "/até",
+          "template": "até que {condição} {ação}"
+        },
+        "en": {
+          "canonical": "until",
+          "variants": [
+            "until",
+            "till",
+            "up until",
+            "until such time as"
+          ],
+          "slash": "/until",
+          "template": "until {condition} {action}"
+        }
+      }
+    },
+    {
+      "id": "comp_greater",
+      "category": "comparison",
+      "type": "relational",
+      "compute": {
+        "function": "GREATER",
+        "operator": ">",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "maior que",
+          "variants": [
+            "maior que",
+            "mais que",
+            "acima de",
+            "superior a",
+            "excede"
+          ],
+          "slash": "/maior",
+          "template": "{a} maior que {b}"
+        },
+        "en": {
+          "canonical": "greater than",
+          "variants": [
+            "greater than",
+            "more than",
+            "above",
+            "exceeds",
+            "over"
+          ],
+          "slash": "/greater",
+          "template": "{a} greater than {b}"
+        }
+      }
+    },
+    {
+      "id": "comp_less",
+      "category": "comparison",
+      "type": "relational",
+      "compute": {
+        "function": "LESS",
+        "operator": "<",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "menor que",
+          "variants": [
+            "menor que",
+            "menos que",
+            "abaixo de",
+            "inferior a",
+            "menos de"
+          ],
+          "slash": "/menor",
+          "template": "{a} menor que {b}"
+        },
+        "en": {
+          "canonical": "less than",
+          "variants": [
+            "less than",
+            "below",
+            "under",
+            "inferior to",
+            "fewer than"
+          ],
+          "slash": "/less",
+          "template": "{a} less than {b}"
+        }
+      }
+    },
+    {
+      "id": "comp_equal",
+      "category": "comparison",
+      "type": "relational",
+      "compute": {
+        "function": "EQUAL",
+        "operator": "==",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "igual a",
+          "variants": [
+            "igual a",
+            "é igual",
+            "equivale a",
+            "é",
+            "seja"
+          ],
+          "slash": "/igual",
+          "template": "{a} igual a {b}"
+        },
+        "en": {
+          "canonical": "equal to",
+          "variants": [
+            "equal to",
+            "equals",
+            "is equal to",
+            "is",
+            "same as"
+          ],
+          "slash": "/equal",
+          "template": "{a} equal to {b}"
+        }
+      }
+    },
+    {
+      "id": "comp_not_equal",
+      "category": "comparison",
+      "type": "relational",
+      "compute": {
+        "function": "NOT_EQUAL",
+        "operator": "!=",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "diferente de",
+          "variants": [
+            "diferente de",
+            "não é",
+            "não igual a",
+            "distinto de",
+            "desigual a"
+          ],
+          "slash": "/diferente",
+          "template": "{a} diferente de {b}"
+        },
+        "en": {
+          "canonical": "not equal to",
+          "variants": [
+            "not equal to",
+            "not equals",
+            "is not",
+            "different from",
+            "differs from"
+          ],
+          "slash": "/not-equal",
+          "template": "{a} not equal to {b}"
+        }
+      }
+    },
+    {
+      "id": "comp_greater_equal",
+      "category": "comparison",
+      "type": "relational",
+      "compute": {
+        "function": "GREATER_EQUAL",
+        "operator": ">=",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "maior ou igual a",
+          "variants": [
+            "maior ou igual a",
+            "ao menos",
+            "no mínimo",
+            "pelo menos",
+            "não menor que"
+          ],
+          "slash": "/maior-igual",
+          "template": "{a} maior ou igual a {b}"
+        },
+        "en": {
+          "canonical": "greater than or equal to",
+          "variants": [
+            "greater than or equal to",
+            "at least",
+            "no less than",
+            "minimum of",
+            "not less than"
+          ],
+          "slash": "/greater-equal",
+          "template": "{a} greater than or equal to {b}"
+        }
+      }
+    },
+    {
+      "id": "comp_less_equal",
+      "category": "comparison",
+      "type": "relational",
+      "compute": {
+        "function": "LESS_EQUAL",
+        "operator": "<=",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "menor ou igual a",
+          "variants": [
+            "menor ou igual a",
+            "no máximo",
+            "até",
+            "não mais que",
+            "não maior que"
+          ],
+          "slash": "/menor-igual",
+          "template": "{a} menor ou igual a {b}"
+        },
+        "en": {
+          "canonical": "less than or equal to",
+          "variants": [
+            "less than or equal to",
+            "at most",
+            "no more than",
+            "maximum of",
+            "not more than"
+          ],
+          "slash": "/less-equal",
+          "template": "{a} less than or equal to {b}"
+        }
+      }
+    },
+    {
+      "id": "date_today",
+      "category": "date",
+      "type": "literal",
+      "compute": {
+        "function": "TODAY",
+        "formula": "Today()",
+        "arity": 0
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "hoje",
+          "variants": [
+            "hoje",
+            "dia de hoje",
+            "data de hoje",
+            "data atual"
+          ],
+          "slash": "/hoje",
+          "template": "hoje"
+        },
+        "en": {
+          "canonical": "today",
+          "variants": [
+            "today",
+            "current date",
+            "today's date",
+            "this day"
+          ],
+          "slash": "/today",
+          "template": "today"
+        }
+      }
+    },
+    {
+      "id": "date_yesterday",
+      "category": "date",
+      "type": "literal",
+      "compute": {
+        "function": "YESTERDAY",
+        "formula": "Today().AddDays(-1)",
+        "arity": 0
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "ontem",
+          "variants": [
+            "ontem",
+            "dia anterior",
+            "véspera"
+          ],
+          "slash": "/ontem",
+          "template": "ontem"
+        },
+        "en": {
+          "canonical": "yesterday",
+          "variants": [
+            "yesterday",
+            "previous day",
+            "day before"
+          ],
+          "slash": "/yesterday",
+          "template": "yesterday"
+        }
+      }
+    },
+    {
+      "id": "date_tomorrow",
+      "category": "date",
+      "type": "literal",
+      "compute": {
+        "function": "TOMORROW",
+        "formula": "Today().AddDays(1)",
+        "arity": 0
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "amanhã",
+          "variants": [
+            "amanhã",
+            "dia seguinte",
+            "próximo dia"
+          ],
+          "slash": "/amanhã",
+          "template": "amanhã"
+        },
+        "en": {
+          "canonical": "tomorrow",
+          "variants": [
+            "tomorrow",
+            "next day",
+            "following day"
+          ],
+          "slash": "/tomorrow",
+          "template": "tomorrow"
+        }
+      }
+    },
+    {
+      "id": "date_between",
+      "category": "date",
+      "type": "range",
+      "compute": {
+        "function": "DATE_BETWEEN",
+        "formula": "DateBetween({start}, {end})",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "entre datas",
+          "variants": [
+            "entre datas",
+            "de … até",
+            "no intervalo de",
+            "período entre",
+            "entre"
+          ],
+          "slash": "/entre-datas",
+          "template": "entre {data1} e {data2}"
+        },
+        "en": {
+          "canonical": "between dates",
+          "variants": [
+            "between dates",
+            "from … to",
+            "in the interval",
+            "period between",
+            "between"
+          ],
+          "slash": "/between-dates",
+          "template": "between {date1} and {date2}"
+        }
+      }
+    },
+    {
+      "id": "date_before",
+      "category": "date",
+      "type": "comparison",
+      "compute": {
+        "function": "DATE_BEFORE",
+        "operator": "<",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "antes de",
+          "variants": [
+            "antes de",
+            "anterior a",
+            "precede",
+            "prior a"
+          ],
+          "slash": "/antes-de",
+          "template": "{data} antes de {referência}"
+        },
+        "en": {
+          "canonical": "before",
+          "variants": [
+            "before",
+            "prior to",
+            "earlier than",
+            "precedes"
+          ],
+          "slash": "/before",
+          "template": "{date} before {reference}"
+        }
+      }
+    },
+    {
+      "id": "date_after",
+      "category": "date",
+      "type": "comparison",
+      "compute": {
+        "function": "DATE_AFTER",
+        "operator": ">",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "depois de",
+          "variants": [
+            "depois de",
+            "posterior a",
+            "após",
+            "seguinte a"
+          ],
+          "slash": "/depois-de",
+          "template": "{data} depois de {referência}"
+        },
+        "en": {
+          "canonical": "after",
+          "variants": [
+            "after",
+            "later than",
+            "following",
+            "subsequent to"
+          ],
+          "slash": "/after",
+          "template": "{date} after {reference}"
+        }
+      }
+    },
+    {
+      "id": "date_diff_days",
+      "category": "date",
+      "type": "function",
+      "compute": {
+        "function": "DATE_DIFF",
+        "formula": "DateDiff({date1}, {date2}, 'days')",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "diferença de dias",
+          "variants": [
+            "diferença de dias",
+            "dias entre",
+            "dias de diferença",
+            "quantos dias entre"
+          ],
+          "slash": "/diferença-dias",
+          "template": "dias entre {data1} e {data2}"
+        },
+        "en": {
+          "canonical": "days difference",
+          "variants": [
+            "days difference",
+            "days between",
+            "difference in days",
+            "how many days between"
+          ],
+          "slash": "/days-diff",
+          "template": "days between {date1} and {date2}"
+        }
+      }
+    },
+    {
+      "id": "date_add_days",
+      "category": "date",
+      "type": "function",
+      "compute": {
+        "function": "DATE_ADD",
+        "formula": "DateAdd({date}, {days}, 'days')",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "somar dias",
+          "variants": [
+            "somar dias",
+            "adicionar dias",
+            "acrescentar dias",
+            "mais dias"
+          ],
+          "slash": "/somar-dias",
+          "template": "{data} mais {n} dias"
+        },
+        "en": {
+          "canonical": "add days",
+          "variants": [
+            "add days",
+            "plus days",
+            "increase by days",
+            "days from"
+          ],
+          "slash": "/add-days",
+          "template": "{date} plus {n} days"
+        }
+      }
+    },
+    {
+      "id": "date_subtract_days",
+      "category": "date",
+      "type": "function",
+      "compute": {
+        "function": "DATE_SUBTRACT",
+        "formula": "DateAdd({date}, -{days}, 'days')",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "subtrair dias",
+          "variants": [
+            "subtrair dias",
+            "remover dias",
+            "menos dias",
+            "retirar dias"
+          ],
+          "slash": "/subtrair-dias",
+          "template": "{data} menos {n} dias"
+        },
+        "en": {
+          "canonical": "subtract days",
+          "variants": [
+            "subtract days",
+            "minus days",
+            "remove days",
+            "days before"
+          ],
+          "slash": "/subtract-days",
+          "template": "{date} minus {n} days"
+        }
+      }
+    },
+    {
+      "id": "func_max",
+      "category": "function",
+      "type": "aggregate",
+      "compute": {
+        "function": "MAX",
+        "formula": "Max({list})",
+        "arity": -1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "máximo de",
+          "variants": [
+            "máximo de",
+            "o maior de",
+            "valor máximo",
+            "maior valor"
+          ],
+          "slash": "/máximo",
+          "template": "máximo de {valores}"
+        },
+        "en": {
+          "canonical": "maximum of",
+          "variants": [
+            "maximum of",
+            "max of",
+            "largest of",
+            "greatest of"
+          ],
+          "slash": "/max",
+          "template": "maximum of {values}"
+        }
+      }
+    },
+    {
+      "id": "func_min",
+      "category": "function",
+      "type": "aggregate",
+      "compute": {
+        "function": "MIN",
+        "formula": "Min({list})",
+        "arity": -1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "mínimo de",
+          "variants": [
+            "mínimo de",
+            "o menor de",
+            "valor mínimo",
+            "menor valor"
+          ],
+          "slash": "/mínimo",
+          "template": "mínimo de {valores}"
+        },
+        "en": {
+          "canonical": "minimum of",
+          "variants": [
+            "minimum of",
+            "min of",
+            "smallest of",
+            "least of"
+          ],
+          "slash": "/min",
+          "template": "minimum of {values}"
+        }
+      }
+    },
+    {
+      "id": "func_average",
+      "category": "function",
+      "type": "aggregate",
+      "compute": {
+        "function": "AVERAGE",
+        "formula": "Average({list})",
+        "arity": -1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "média de",
+          "variants": [
+            "média de",
+            "em média",
+            "média aritmética",
+            "valor médio"
+          ],
+          "slash": "/média",
+          "template": "média de {valores}"
+        },
+        "en": {
+          "canonical": "average of",
+          "variants": [
+            "average of",
+            "mean of",
+            "avg of",
+            "arithmetic mean"
+          ],
+          "slash": "/average",
+          "template": "average of {values}"
+        }
+      }
+    },
+    {
+      "id": "func_sum",
+      "category": "function",
+      "type": "aggregate",
+      "compute": {
+        "function": "SUM",
+        "formula": "Sum({list})",
+        "arity": -1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "somatório de",
+          "variants": [
+            "somatório de",
+            "total de",
+            "soma de",
+            "soma total"
+          ],
+          "slash": "/somatório",
+          "template": "total de {valores}"
+        },
+        "en": {
+          "canonical": "sum of",
+          "variants": [
+            "sum of",
+            "total of",
+            "summation of",
+            "add up"
+          ],
+          "slash": "/sum",
+          "template": "sum of {values}"
+        }
+      }
+    },
+    {
+      "id": "func_count",
+      "category": "function",
+      "type": "aggregate",
+      "compute": {
+        "function": "COUNT",
+        "formula": "Count({list})",
+        "arity": -1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "contar",
+          "variants": [
+            "contar",
+            "número de",
+            "quantidade de",
+            "quantos",
+            "contagem de"
+          ],
+          "slash": "/contar",
+          "template": "número de {itens}"
+        },
+        "en": {
+          "canonical": "count",
+          "variants": [
+            "count",
+            "number of",
+            "quantity of",
+            "how many",
+            "tally"
+          ],
+          "slash": "/count",
+          "template": "count of {items}"
+        }
+      }
+    },
+    {
+      "id": "func_round",
+      "category": "function",
+      "type": "math",
+      "compute": {
+        "function": "ROUND",
+        "formula": "Round({value}, {decimals})",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "arredondar",
+          "variants": [
+            "arredondar",
+            "aproximar",
+            "arredonda para",
+            "arredondamento"
+          ],
+          "slash": "/arredondar",
+          "template": "arredondar {valor} para {decimais} casas"
+        },
+        "en": {
+          "canonical": "round",
+          "variants": [
+            "round",
+            "round to",
+            "approximate",
+            "rounding"
+          ],
+          "slash": "/round",
+          "template": "round {value} to {decimals} places"
+        }
+      }
+    },
+    {
+      "id": "func_abs",
+      "category": "function",
+      "type": "math",
+      "compute": {
+        "function": "ABS",
+        "formula": "Abs({value})",
+        "arity": 1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "valor absoluto",
+          "variants": [
+            "valor absoluto",
+            "módulo",
+            "absoluto",
+            "valor positivo"
+          ],
+          "slash": "/absoluto",
+          "template": "valor absoluto de {número}"
+        },
+        "en": {
+          "canonical": "absolute value",
+          "variants": [
+            "absolute value",
+            "abs",
+            "modulus",
+            "positive value"
+          ],
+          "slash": "/abs",
+          "template": "absolute value of {number}"
+        }
+      }
+    },
+    {
+      "id": "func_power",
+      "category": "function",
+      "type": "math",
+      "compute": {
+        "function": "POWER",
+        "formula": "Power({base}, {exponent})",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "potência",
+          "variants": [
+            "potência",
+            "elevado a",
+            "à potência de",
+            "exponencial"
+          ],
+          "slash": "/potência",
+          "template": "{base} elevado a {expoente}"
+        },
+        "en": {
+          "canonical": "power",
+          "variants": [
+            "power",
+            "raised to",
+            "to the power of",
+            "exponent"
+          ],
+          "slash": "/power",
+          "template": "{base} to the power of {exponent}"
+        }
+      }
+    },
+    {
+      "id": "func_sqrt",
+      "category": "function",
+      "type": "math",
+      "compute": {
+        "function": "SQRT",
+        "formula": "Sqrt({value})",
+        "arity": 1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "raiz quadrada",
+          "variants": [
+            "raiz quadrada",
+            "raiz de",
+            "raiz",
+            "raiz quadrada de"
+          ],
+          "slash": "/raiz",
+          "template": "raiz quadrada de {número}"
+        },
+        "en": {
+          "canonical": "square root",
+          "variants": [
+            "square root",
+            "sqrt",
+            "root of",
+            "square root of"
+          ],
+          "slash": "/sqrt",
+          "template": "square root of {number}"
+        }
+      }
+    },
+    {
+      "id": "func_ceil",
+      "category": "function",
+      "type": "math",
+      "compute": {
+        "function": "CEILING",
+        "formula": "Ceiling({value})",
+        "arity": 1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "arredondar para cima",
+          "variants": [
+            "arredondar para cima",
+            "teto",
+            "arredondar acima",
+            "inteiro superior"
+          ],
+          "slash": "/teto",
+          "template": "arredondar {valor} para cima"
+        },
+        "en": {
+          "canonical": "round up",
+          "variants": [
+            "round up",
+            "ceiling",
+            "ceil",
+            "round upward"
+          ],
+          "slash": "/ceil",
+          "template": "round {value} up"
+        }
+      }
+    },
+    {
+      "id": "func_floor",
+      "category": "function",
+      "type": "math",
+      "compute": {
+        "function": "FLOOR",
+        "formula": "Floor({value})",
+        "arity": 1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "arredondar para baixo",
+          "variants": [
+            "arredondar para baixo",
+            "piso",
+            "arredondar abaixo",
+            "inteiro inferior"
+          ],
+          "slash": "/piso",
+          "template": "arredondar {valor} para baixo"
+        },
+        "en": {
+          "canonical": "round down",
+          "variants": [
+            "round down",
+            "floor",
+            "round downward",
+            "truncate"
+          ],
+          "slash": "/floor",
+          "template": "round {value} down"
+        }
+      }
+    },
+    {
+      "id": "logic_and",
+      "category": "logical",
+      "type": "operator",
+      "compute": {
+        "function": "AND",
+        "operator": "&&",
+        "arity": -1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "e",
+          "variants": [
+            "e",
+            "também",
+            "assim como",
+            "além de"
+          ],
+          "slash": "/e",
+          "template": "{condição1} e {condição2}"
+        },
+        "en": {
+          "canonical": "and",
+          "variants": [
+            "and",
+            "also",
+            "as well as",
+            "plus"
+          ],
+          "slash": "/and",
+          "template": "{condition1} and {condition2}"
+        }
+      }
+    },
+    {
+      "id": "logic_or",
+      "category": "logical",
+      "type": "operator",
+      "compute": {
+        "function": "OR",
+        "operator": "||",
+        "arity": -1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "ou",
+          "variants": [
+            "ou",
+            "ou então",
+            "alternativamente"
+          ],
+          "slash": "/ou",
+          "template": "{condição1} ou {condição2}"
+        },
+        "en": {
+          "canonical": "or",
+          "variants": [
+            "or",
+            "alternatively",
+            "either"
+          ],
+          "slash": "/or",
+          "template": "{condition1} or {condition2}"
+        }
+      }
+    },
+    {
+      "id": "logic_not",
+      "category": "logical",
+      "type": "operator",
+      "compute": {
+        "function": "NOT",
+        "operator": "!",
+        "arity": 1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "não",
+          "variants": [
+            "não",
+            "negação de",
+            "oposto de",
+            "contrário de"
+          ],
+          "slash": "/não",
+          "template": "não {condição}"
+        },
+        "en": {
+          "canonical": "not",
+          "variants": [
+            "not",
+            "negation of",
+            "opposite of",
+            "contrary to"
+          ],
+          "slash": "/not",
+          "template": "not {condition}"
+        }
+      }
+    },
+    {
+      "id": "text_concat",
+      "category": "text",
+      "type": "function",
+      "compute": {
+        "function": "CONCATENATE",
+        "formula": "Concatenate({text1}, {text2})",
+        "arity": -1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "concatenar",
+          "variants": [
+            "concatenar",
+            "juntar",
+            "unir",
+            "combinar textos"
+          ],
+          "slash": "/concatenar",
+          "template": "juntar {texto1} com {texto2}"
+        },
+        "en": {
+          "canonical": "concatenate",
+          "variants": [
+            "concatenate",
+            "join",
+            "combine",
+            "merge text"
+          ],
+          "slash": "/concat",
+          "template": "join {text1} with {text2}"
+        }
+      }
+    },
+    {
+      "id": "text_contains",
+      "category": "text",
+      "type": "function",
+      "compute": {
+        "function": "CONTAINS",
+        "formula": "Contains({text}, {search})",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "contém",
+          "variants": [
+            "contém",
+            "inclui",
+            "tem",
+            "possui"
+          ],
+          "slash": "/contém",
+          "template": "{texto} contém {busca}"
+        },
+        "en": {
+          "canonical": "contains",
+          "variants": [
+            "contains",
+            "includes",
+            "has",
+            "holds"
+          ],
+          "slash": "/contains",
+          "template": "{text} contains {search}"
+        }
+      }
+    },
+    {
+      "id": "text_length",
+      "category": "text",
+      "type": "function",
+      "compute": {
+        "function": "LENGTH",
+        "formula": "Length({text})",
+        "arity": 1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "comprimento",
+          "variants": [
+            "comprimento",
+            "tamanho",
+            "quantidade de caracteres",
+            "número de caracteres"
+          ],
+          "slash": "/comprimento",
+          "template": "comprimento de {texto}"
+        },
+        "en": {
+          "canonical": "length",
+          "variants": [
+            "length",
+            "size",
+            "character count",
+            "number of characters"
+          ],
+          "slash": "/length",
+          "template": "length of {text}"
+        }
+      }
+    },
+    {
+      "id": "text_upper",
+      "category": "text",
+      "type": "function",
+      "compute": {
+        "function": "UPPER",
+        "formula": "Upper({text})",
+        "arity": 1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "maiúsculas",
+          "variants": [
+            "maiúsculas",
+            "caixa alta",
+            "em maiúsculas",
+            "converter para maiúsculas"
+          ],
+          "slash": "/maiúsculas",
+          "template": "{texto} em maiúsculas"
+        },
+        "en": {
+          "canonical": "uppercase",
+          "variants": [
+            "uppercase",
+            "upper case",
+            "to uppercase",
+            "capitalize all"
+          ],
+          "slash": "/upper",
+          "template": "{text} in uppercase"
+        }
+      }
+    },
+    {
+      "id": "text_lower",
+      "category": "text",
+      "type": "function",
+      "compute": {
+        "function": "LOWER",
+        "formula": "Lower({text})",
+        "arity": 1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "minúsculas",
+          "variants": [
+            "minúsculas",
+            "caixa baixa",
+            "em minúsculas",
+            "converter para minúsculas"
+          ],
+          "slash": "/minúsculas",
+          "template": "{texto} em minúsculas"
+        },
+        "en": {
+          "canonical": "lowercase",
+          "variants": [
+            "lowercase",
+            "lower case",
+            "to lowercase",
+            "downcase"
+          ],
+          "slash": "/lower",
+          "template": "{text} in lowercase"
+        }
+      }
+    },
+    {
+      "id": "text_trim",
+      "category": "text",
+      "type": "function",
+      "compute": {
+        "function": "TRIM",
+        "formula": "Trim({text})",
+        "arity": 1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "remover espaços",
+          "variants": [
+            "remover espaços",
+            "limpar espaços",
+            "aparar",
+            "trim"
+          ],
+          "slash": "/trim",
+          "template": "remover espaços de {texto}"
+        },
+        "en": {
+          "canonical": "trim",
+          "variants": [
+            "trim",
+            "remove spaces",
+            "strip spaces",
+            "clean spaces"
+          ],
+          "slash": "/trim",
+          "template": "trim {text}"
+        }
+      }
+    },
+    {
+      "id": "list_filter",
+      "category": "list",
+      "type": "function",
+      "compute": {
+        "function": "FILTER",
+        "formula": "Filter({list}, {condition})",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "filtrar",
+          "variants": [
+            "filtrar",
+            "selecionar onde",
+            "apenas onde",
+            "somente se"
+          ],
+          "slash": "/filtrar",
+          "template": "filtrar {lista} onde {condição}"
+        },
+        "en": {
+          "canonical": "filter",
+          "variants": [
+            "filter",
+            "select where",
+            "only where",
+            "where"
+          ],
+          "slash": "/filter",
+          "template": "filter {list} where {condition}"
+        }
+      }
+    },
+    {
+      "id": "list_map",
+      "category": "list",
+      "type": "function",
+      "compute": {
+        "function": "MAP",
+        "formula": "Map({list}, {expression})",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "aplicar a cada",
+          "variants": [
+            "aplicar a cada",
+            "para cada",
+            "mapear",
+            "transformar cada"
+          ],
+          "slash": "/para-cada",
+          "template": "para cada {item} aplicar {ação}"
+        },
+        "en": {
+          "canonical": "map",
+          "variants": [
+            "map",
+            "for each",
+            "apply to each",
+            "transform each"
+          ],
+          "slash": "/map",
+          "template": "for each {item} apply {action}"
+        }
+      }
+    },
+    {
+      "id": "list_find",
+      "category": "list",
+      "type": "function",
+      "compute": {
+        "function": "FIND",
+        "formula": "Find({list}, {condition})",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "encontrar",
+          "variants": [
+            "encontrar",
+            "procurar",
+            "buscar",
+            "achar"
+          ],
+          "slash": "/encontrar",
+          "template": "encontrar em {lista} onde {condição}"
+        },
+        "en": {
+          "canonical": "find",
+          "variants": [
+            "find",
+            "search",
+            "locate",
+            "look for"
+          ],
+          "slash": "/find",
+          "template": "find in {list} where {condition}"
+        }
+      }
+    },
+    {
+      "id": "list_sort",
+      "category": "list",
+      "type": "function",
+      "compute": {
+        "function": "SORT",
+        "formula": "Sort({list}, {order})",
+        "arity": 2
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "ordenar",
+          "variants": [
+            "ordenar",
+            "organizar",
+            "classificar",
+            "sortear"
+          ],
+          "slash": "/ordenar",
+          "template": "ordenar {lista} por {critério}"
+        },
+        "en": {
+          "canonical": "sort",
+          "variants": [
+            "sort",
+            "order",
+            "arrange",
+            "organize"
+          ],
+          "slash": "/sort",
+          "template": "sort {list} by {criteria}"
+        }
+      }
+    },
+    {
+      "id": "list_first",
+      "category": "list",
+      "type": "function",
+      "compute": {
+        "function": "FIRST",
+        "formula": "First({list})",
+        "arity": 1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "primeiro",
+          "variants": [
+            "primeiro",
+            "primeiro item",
+            "primeiro elemento",
+            "início"
+          ],
+          "slash": "/primeiro",
+          "template": "primeiro de {lista}"
+        },
+        "en": {
+          "canonical": "first",
+          "variants": [
+            "first",
+            "first item",
+            "first element",
+            "beginning"
+          ],
+          "slash": "/first",
+          "template": "first of {list}"
+        }
+      }
+    },
+    {
+      "id": "list_last",
+      "category": "list",
+      "type": "function",
+      "compute": {
+        "function": "LAST",
+        "formula": "Last({list})",
+        "arity": 1
+      },
+      "i18n": {
+        "pt": {
+          "canonical": "último",
+          "variants": [
+            "último",
+            "último item",
+            "último elemento",
+            "fim"
+          ],
+          "slash": "/último",
+          "template": "último de {lista}"
+        },
+        "en": {
+          "canonical": "last",
+          "variants": [
+            "last",
+            "last item",
+            "last element",
+            "end"
+          ],
+          "slash": "/last",
+          "template": "last of {list}"
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "categories": [
+      "arithmetic",
+      "conditional",
+      "comparison",
+      "date",
+      "function",
+      "logical",
+      "text",
+      "list"
+    ],
+    "types": [
+      "operator",
+      "control_flow",
+      "event",
+      "recurring_event",
+      "loop",
+      "limit",
+      "relational",
+      "literal",
+      "range",
+      "aggregate",
+      "math"
+    ],
+    "supported_languages": ["pt", "en"],
+    "extensible": true
+  }
+}
